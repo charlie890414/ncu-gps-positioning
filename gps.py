@@ -56,14 +56,13 @@ for point in os.listdir('data/'):
 
             if "GPGGA" in line:
                 msg = pynmea2.parse(line)     
-                print(type(msg))     
                 if msg.latitude and msg.longitude and msg.altitude:
                     latitude.append(msg.latitude)
                     longitude.append(msg.longitude)
                     altitude.append(msg.altitude)
                 
-        except pynmea2.ParseError as e:
-            print('Parse error: {}'.format(e))
+        except Exception as e:
+            print('Error: {}'.format(e))
             continue
 
     print(SV.keys())
@@ -71,7 +70,7 @@ for point in os.listdir('data/'):
 
     origin_point = [sum(latitude)/len(latitude), sum(longitude)/len(longitude)]
 
-    fmap.add_child(folium.Marker(location=origin_point, popup=f"{point.split('.')[0]} <br> altitude: {sum(altitude)/len(altitude)}"))
+    fmap.add_child(folium.Marker(location=origin_point, popup=f"{point.split('.')[0]} <br> altitude: {(sum(altitude)/len(altitude)):.2f}"))
 
     list_colors = [
         "#00FF00",
