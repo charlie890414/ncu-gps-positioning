@@ -1,2 +1,5 @@
-map.html
+
+.vscode/
+templates/maps/
+json/
 Pipfile.lock

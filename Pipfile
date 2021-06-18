@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 folium = "*"
 pynmea2 = "*"
+flask = "*"
 
 [dev-packages]
 

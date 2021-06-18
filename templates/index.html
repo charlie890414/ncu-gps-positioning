@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0%;
+        }
+        h1{
+            margin: 0%;
+        }
+        .flex {
+            display: flex;
+            height: 100vh; 
+            width: 100vw;
+            flex-direction: column;
+        }
+        .item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title>MAP</title>
+</head>
+<body>
+    <div class="flex">
+        {% for place in place_list %}
+        <div class="item">
+            <a href="/show/{{place}}"><h1>{{place}}</h1></a>            
+        </div>     
+        {% endfor %}
+    </div>    
+</body>
+</html>
