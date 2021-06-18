@@ -56,10 +56,9 @@ for point in os.listdir('data/'):
 
             if "GPGGA" in line:
                 msg = pynmea2.parse(line)     
-                if msg.latitude and msg.longitude and msg.altitude:
+                if msg.latitude and msg.longitude:
                     latitude.append(msg.latitude)
                     longitude.append(msg.longitude)
-                    altitude.append(msg.altitude)
                 
         except Exception as e:
             print('Error: {}'.format(e))
@@ -72,7 +71,6 @@ for point in os.listdir('data/'):
     
     fmap = folium.Map(location=origin_point, zoom_start=17, control_scale=True)
     fmap.add_child(folium.Marker(location=origin_point, popup=f"{point.split('.')[0]}"))
-    # fmap.add_child(folium.Marker(location=origin_point, popup=f"{point.split('.')[0]} <br> altitude: {(sum(altitude)/len(altitude)):.2f}"))
 
     list_colors = [
         "#00FF00",
@@ -128,7 +126,6 @@ for point in os.listdir('data/'):
             'deg': deg,
             'snr': snr
         }
-        # fmap.add_child(folium.Circle(location=[end_lat, end_lon], color="blue", fill_color="blue", fill=True, popup=f"prn: {i} <br> deg: {deg:.2f} <br> azimuth: {azimuth:.2f} <br> snr: {snr:.2f}"))
     json.dump(detail, open(f"json/{point.split('.')[0]}.json", 'w'), ensure_ascii=False)
     fmap.save(f"templates/maps/{point.split('.')[0]}.html")
 

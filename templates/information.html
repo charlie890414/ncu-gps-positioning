@@ -47,7 +47,7 @@
     <div class="flex">
         <div class="info">
             <h1>{{place}}</h1>
-            <p>xx有建築物</p>
+            <!-- <p>xx有建築物</p> -->
             {% for PRN in detail.keys() %}
             <a onclick="hide{{PRN}}.style.display=hide{{PRN}}.style.display=='none'?'':'none'"><h2>衛星編號: {{PRN}}</h2></a>
             <div id="hide{{PRN}}" style="display:none">
