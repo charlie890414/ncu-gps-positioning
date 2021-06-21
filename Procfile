@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: python gps.py & gunicorn app:app
