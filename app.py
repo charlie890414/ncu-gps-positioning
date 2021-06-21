@@ -15,4 +15,4 @@ def maps(place):
     return render_template(f'maps/{place}.html')
 
 if __name__ == "__main__":
-    app.run(port=9000)
+    app.run()
