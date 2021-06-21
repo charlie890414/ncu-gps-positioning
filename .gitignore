@@ -1,5 +1,5 @@
 
 .vscode/
 templates/maps/
-json/*
+json/*.json
 Pipfile.lock
