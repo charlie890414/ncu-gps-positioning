@@ -1,4 +1,4 @@
-# Protocols-and-Applications-for-Wireless-Sensor-Networks-FINAL
+# ncu-gps-positioning
 
 ## SETUP ENVIRNMENT
 
